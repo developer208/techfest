@@ -14,6 +14,7 @@ const Navbar = () => {
       className={menu === true ? "no-nav-main" : "nav-main"}
     >
 
+      <div className="navbar">
       <div className="logo">LOGO</div>
       <div className="sub-main1">
         <motion.div
@@ -45,20 +46,21 @@ const Navbar = () => {
           Contact
         </motion.div>
       </div>
-      <div
+      </div>
+
+      <motion.div
       className={!menu ? "menu" : "no-menu"}>
         <div onClick={() => setMenu((menu) => !menu)}>Home</div>
         <div onClick={() => setMenu((menu) => !menu)}>Events</div>
         <div onClick={() => setMenu((menu) => !menu)}>Explore</div>
         <div onClick={() => setMenu((menu) => !menu)}>Contacts</div>
-      </div>
+      </motion.div>
       <motion.div
         className="sub-main2"
         onClick={() => setMenu((menu) => !menu)}
       >
         {menu ? <AiOutlineMenu size={28} /> : <AiOutlineClose size={28} />}
       </motion.div>
-
     </motion.div>
   );
 };
